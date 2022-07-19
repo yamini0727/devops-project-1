@@ -1,0 +1,15 @@
+---
+- hosts: test-server
+  become: true
+  tasks:
+  - name: install docker
+    apt:
+      pkg: docker.io
+      state: present
+  - name: strat docker service
+    service:
+      name: docker
+      state: started
+      enabled: true
+  - name: deploy addressbook application
+    command: docker run -itd -p 8090:8080 yamini0727/addressbook:1.0
