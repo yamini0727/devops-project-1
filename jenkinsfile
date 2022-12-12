@@ -1,0 +1,11 @@
+pipeline {
+  agent any
+  stages {
+    stage('GitHub Jenkins Ant Docker Build') {
+      steps {
+        git 'https://github.com/yamini0727/devops-project-1.git'
+        sh 'mvn clean package'
+      }
+    }
+  }
+}
