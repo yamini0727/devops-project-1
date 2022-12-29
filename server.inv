@@ -1,0 +1,2 @@
+[deploy]
+13.232.99.157 ansible_ssh_pass=yamini ansible_ssh_user=yamini
